@@ -32,7 +32,7 @@ export function Dashboard() {
       
       <Separator />
 
-      <div className="grid grid-cols-3 gap-3">
+      <div className="grid md:grid-cols-3 gap-3">
         <Card>
           <CardHeader className="flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-base font-semibold">
