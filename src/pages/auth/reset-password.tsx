@@ -9,7 +9,7 @@ export function ResetPassword() {
         <p className="text-sm text-gray-500 text-center">Redefina sua senha de forma simples e segura para recuperar o acesso à sua conta.</p>
       </div>
 
-      <form action="" className="space-y-2">
+      <form action="" className="space-y-4">
         <div className="space-y-1">
           <label className="font-medium" htmlFor="user">Email de recuperação:</label>
           <Input className="w-full" type="email" id="user" placeholder="Digite seu email"/>
