@@ -2,10 +2,9 @@ import { Outlet } from 'react-router-dom'
 
 export function AuthLayout() {
   return (
-    <div>
-      <h1>Autenticação</h1>
-
-      <div>
+    <div className='grid grid-cols-3 h-screen'>
+      <div className="bg-[url('https://source.unsplash.com/random?condominium')] bg-cover -mb-7 md:mb-0 brightness-75 col-span-2" />
+      <div >
         <Outlet />
       </div>
     </div>
