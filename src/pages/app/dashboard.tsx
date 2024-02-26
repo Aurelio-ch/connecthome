@@ -29,7 +29,9 @@ export function Dashboard() {
           uma tomada de decisão eficaz.
         </p>
       </div>
+      
       <Separator />
+
       <div className="grid grid-cols-3 gap-3">
         <Card>
           <CardHeader className="flex-row items-center justify-between space-y-0 pb-2">
@@ -68,6 +70,7 @@ export function Dashboard() {
           </CardContent>
         </Card>
       </div>
+
       <Table className="overflow-auto">
         <TableHeader>
           <TableRow>
@@ -86,9 +89,9 @@ export function Dashboard() {
                 <TableCell>200</TableCell>
                 <TableCell className="text-right">
                   <DropdownMenu>
-                    <DropdownMenuTrigger>
-                      <Button variant="ghost">
-                        <MoreVertical />
+                    <DropdownMenuTrigger asChild>
+                      <Button variant="ghost" size="icon">
+                        <MoreVertical className="size-4" />
                       </Button>
                     </DropdownMenuTrigger>
                     <DropdownMenuContent>

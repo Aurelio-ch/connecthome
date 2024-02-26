@@ -1,16 +1,23 @@
-import { Building2 } from "lucide-react";
-
+import { Building2, Menu } from "lucide-react";
+import { ModeToggle } from "./mode-toggle";
+import { Button } from "./ui/button";
 
 export function Header() {
   return (
-    <div className="w-full h-full border-r border-border p-8 rounded-r-lg space-y-10">
-        <div>
-            <span className="font-extrabold text-xl flex items-center gap-1">
-              <Building2 className="size-8 text-primary" />
-              <span>Connect<span className="text-primary">Home</span></span>
-            </span>
-        </div>
-      
+    <div className="flex items-center justify-between h-full w-full rounded-r-lg border-b border-border p-4 ">
+      <div className="inline-flex gap-4">
+        <Button variant="ghost" size="icon">
+          <Menu />
+        </Button>
+        <span className="flex items-center gap-1 text-xl font-extrabold">
+          <Building2 className="size-8 text-primary" />
+          <span>
+            Connect<span className="text-primary">Home</span>
+          </span>
+        </span>
+      </div>
+
+      <ModeToggle />
     </div>
-  )
+  );
 }

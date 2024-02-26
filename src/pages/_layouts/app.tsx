@@ -3,9 +3,8 @@ import { Outlet } from 'react-router-dom'
 
 export function AppLayout() {
   return (
-    <div className='w-screen h-screen grid grid-cols-app bg-background text-foreground'>
+    <div className='h-screen grid bg-background text-foreground'>
       <Header />
-
       <div className=' p-10'>
         <Outlet />
       </div>

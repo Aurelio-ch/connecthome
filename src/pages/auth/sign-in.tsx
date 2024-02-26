@@ -1,10 +1,12 @@
+import { ModeToggle } from "@/components/mode-toggle";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Link } from "react-router-dom";
 
 export function SignIn() {
   return (
-    <div className="p-6 space-y-6 flex flex-col justify-center h-full">
+    <div className="p-6 space-y-6 flex flex-col justify-center h-full relative">
+      <div className="absolute top-4 right-4"><ModeToggle /></div>
       <div className="space-y-2">
         <h1 className="text-3xl font-bold text-center">Login</h1>
         <p className="text-sm text-gray-500 text-center">Faça login de maneira rápida e segura para acessar todas as funcionalidades do sistema.</p>
