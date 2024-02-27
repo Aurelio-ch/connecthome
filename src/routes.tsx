@@ -5,6 +5,9 @@ import { AuthLayout } from './pages/_layouts/auth'
 import { Dashboard } from './pages/app/dashboard'
 import { SignIn } from './pages/auth/sign-in'
 import { ResetPassword } from './pages/auth/reset-password'
+import { Condominium } from './pages/app/condominium'
+import { Users } from './pages/app/users'
+
 
 export const router = createBrowserRouter([
   {
@@ -15,6 +18,15 @@ export const router = createBrowserRouter([
         path: '/',
         element: <Dashboard />,
       },
+      {
+        path: '/condominium',
+        element: <Condominium />,
+      },
+      {
+        path: '/users',
+        element: <Users />,
+      },
+      
     ],
   },
   {
@@ -25,12 +37,6 @@ export const router = createBrowserRouter([
         path: '/sign-in',
         element: <SignIn />,
       },
-    ],
-  },
-  {
-    path: '/',
-    element: <AuthLayout />,
-    children: [
       {
         path: '/reset-password',
         element: <ResetPassword />,
