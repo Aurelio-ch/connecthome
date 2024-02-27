@@ -1,39 +1,52 @@
-import { Building2, Menu } from "lucide-react";
+import { Building2, Menu, Settings } from "lucide-react";
 import { ModeToggle } from "./mode-toggle";
 import { Button } from "./ui/button";
-import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "./ui/sheet";
+import { NavLink } from "./ui/nav-link";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "./ui/dropdown-menu";
 
 export function Header() {
   return (
     <div className="flex h-full w-full items-center justify-between rounded-r-lg border-b border-border p-4 ">
-      <div className="inline-flex gap-4">
-        <Sheet>
+      <div className="inline-flex items-center gap-4">
+        <Button className="md:hidden" variant="ghost" size="icon">
+          <Menu />
+        </Button>
 
-          <SheetTrigger>
-            <Button variant="ghost" size="icon">
-              <Menu />
-            </Button>
-          </SheetTrigger>
-          <SheetContent>
-            <SheetHeader>
-              <SheetTitle>Are you absolutely sure?</SheetTitle>
-              <SheetDescription>
-                This action cannot be undone. This will permanently delete your
-                account and remove your data from our servers.
-              </SheetDescription>
-            </SheetHeader>
-          </SheetContent>
-
-        </Sheet>
         <span className="flex items-center gap-1 text-xl font-extrabold">
           <Building2 className="size-8 text-primary" />
           <span>
             Connect<span className="text-primary">Home</span>
           </span>
         </span>
+
+        <nav className=" hidden gap-4 pl-4 md:inline-flex">
+          <NavLink to="/">Dashboard</NavLink>
+          <NavLink to="/condominium">Condominios</NavLink>
+          <NavLink to="/users">Usuarios</NavLink>
+        </nav>
       </div>
 
-      <ModeToggle />
+      <div className="inline-flex gap-4">
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <Button variant="ghost" size="icon">
+              <Settings className="size-5" />
+            </Button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent>
+            <DropdownMenuLabel className="inline-flex flex-col">
+             Aurélio Chagas
+             <p className="text-xs text-stone-400">aurelio.chagas.c@gmail.com</p>
+            </DropdownMenuLabel>
+            <DropdownMenuSeparator />
+            <DropdownMenuItem>Perfil</DropdownMenuItem>
+            <DropdownMenuItem>Configurações</DropdownMenuItem>
+            <DropdownMenuSeparator />
+            <DropdownMenuItem>Log out</DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
+        <ModeToggle />
+      </div>
     </div>
   );
 }

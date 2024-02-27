@@ -5,7 +5,7 @@ export function AppLayout() {
   return (
     <div className='h-screen grid bg-background text-foreground'>
       <Header />
-      <div className=' p-10'>
+      <div className='p-10'>
         <Outlet />
       </div>
     </div>
