@@ -17,7 +17,15 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { ArrowRight, Building, MoreVertical, Settings, Users } from "lucide-react";
+import {
+  ArrowRight,
+  Building,
+  MoreVertical,
+  Settings,
+  UserRoundCog,
+  Users,
+} from "lucide-react";
+import { Link } from "react-router-dom";
 
 export function Dashboard() {
   return (
@@ -61,28 +69,34 @@ export function Dashboard() {
 
         <Card>
           <CardHeader className="flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-base font-semibold">Moradores</CardTitle>
-            <Users className="h-4 w-4 text-muted-foreground" />
+            <CardTitle className="text-base font-semibold">Usuários</CardTitle><b></b>
+            <UserRoundCog className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
-            <span className="text-2xl font-bold tracking-tight">120</span>
-            <p className="text-xs text-muted-foreground">número de moradores</p>
+            <span className="text-2xl font-bold tracking-tight">10</span>
+            <p className="text-xs text-muted-foreground">número de usuários do sistema</p>
           </CardContent>
         </Card>
       </div>
 
-      <div className="flex flex-col md:flex-row gap-4 justify-between">
-        <div >
+      <div className="flex flex-row justify-between">
+        <div>
           <h1 className="inline-block text-xl font-medium">
             Lista de Concominios
           </h1>
           <p className="mt-1 text-sm text-muted-foreground">
-          Explore a lista de condomínios disponíveis e encontre informações essenciais para uma gestão eficiente.
+            Explore a lista de condomínios disponíveis e encontre informações
+            essenciais para uma gestão eficiente.
           </p>
         </div>
 
-        <Button variant="link" className="inline-flex gap-1 hover:opacity-65 transition text-muted-foreground">
-          Ver mais <ArrowRight className="size-4" />
+        <Button variant="link" className="inline-flex justify-end gap-1 text-muted-foreground transition hover:opacity-65" asChild>
+          <Link
+            
+            to="/condominium"
+          >
+            Ver mais <ArrowRight className="size-4" />
+          </Link>
         </Button>
       </div>
 

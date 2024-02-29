@@ -29,7 +29,7 @@ import { MoreVertical, Plus, Settings } from "lucide-react";
 export function Condominium() {
   return (
     <>
-      <div className="flex flex-col md:flex-row gap-4 justify-between">
+      <div className="flex  items-center flex-row gap-4 justify-between">
         <div >
           <h1 className="inline-block text-xl font-medium">
             Lista de Concominios
@@ -39,8 +39,10 @@ export function Condominium() {
           </p>
         </div>
 
-        <Button className="inline-flex gap-4 hover:opacity-65 transition ">
-          <Plus className="size-4" /> Add Condominio
+        <Button className="inline-flex gap-2 hover:opacity-65 transition ">
+          <Plus className="size-4" /> 
+          <span className="hidden md:block">Add Condominio</span>
+          <span className="block md:hidden">Add</span>
         </Button>
       </div>
 
