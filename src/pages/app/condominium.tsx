@@ -28,7 +28,7 @@ import { MoreVertical, Plus, Settings } from "lucide-react";
 
 export function Condominium() {
   return (
-    <div className="space-y-6">
+    <>
       <div className="flex flex-col md:flex-row gap-4 justify-between">
         <div >
           <h1 className="inline-block text-xl font-medium">
@@ -104,6 +104,6 @@ export function Condominium() {
           </PaginationContent>
         </Pagination>
       </div>
-    </div>
+    </>
   );
 }

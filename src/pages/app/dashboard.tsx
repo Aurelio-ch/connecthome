@@ -17,22 +17,22 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { Building, MoreVertical, Settings, Users } from "lucide-react";
+import { ArrowRight, Building, MoreVertical, Settings, Users } from "lucide-react";
 
 export function Dashboard() {
   return (
-    <div className="space-y-6">
+    <>
       <div>
         <h1 className="inline-block text-xl font-medium">Dashboard</h1>
-        <p className="mt-1 text-sm text-gray-500">
+        <p className="mt-1 text-sm text-muted-foreground">
           O Dashboard centraliza dados essenciais em gráficos interativos para
           uma tomada de decisão eficaz.
         </p>
       </div>
-      
+
       <Separator />
 
-      <div className="grid md:grid-cols-3 gap-3">
+      <div className="grid gap-3 md:grid-cols-3">
         <Card>
           <CardHeader className="flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-base font-semibold">
@@ -71,6 +71,21 @@ export function Dashboard() {
         </Card>
       </div>
 
+      <div className="flex flex-col md:flex-row gap-4 justify-between">
+        <div >
+          <h1 className="inline-block text-xl font-medium">
+            Lista de Concominios
+          </h1>
+          <p className="mt-1 text-sm text-muted-foreground">
+          Explore a lista de condomínios disponíveis e encontre informações essenciais para uma gestão eficiente.
+          </p>
+        </div>
+
+        <Button variant="link" className="inline-flex gap-1 hover:opacity-65 transition text-muted-foreground">
+          Ver mais <ArrowRight className="size-4" />
+        </Button>
+      </div>
+
       <Table className="overflow-auto">
         <TableHeader>
           <TableRow>
@@ -95,7 +110,10 @@ export function Dashboard() {
                       </Button>
                     </DropdownMenuTrigger>
                     <DropdownMenuContent>
-                      <DropdownMenuLabel className="inline-flex gap-2 items-center"> <Settings className="size-4" /> Gerenciar</DropdownMenuLabel>
+                      <DropdownMenuLabel className="inline-flex items-center gap-2">
+                        {" "}
+                        <Settings className="size-4" /> Gerenciar
+                      </DropdownMenuLabel>
                       <DropdownMenuSeparator />
                       <DropdownMenuItem>Editar</DropdownMenuItem>
                       <DropdownMenuItem>Moradores</DropdownMenuItem>
@@ -108,6 +126,6 @@ export function Dashboard() {
           })}
         </TableBody>
       </Table>
-    </div>
+    </>
   );
 }
