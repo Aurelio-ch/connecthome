@@ -13,7 +13,7 @@ export function Users() {
             Lista de Usuários
           </h1>
           <p className="mt-1 text-sm text-muted-foreground">
-          Explore a lista de condomínios disponíveis e encontre informações essenciais para uma gestão eficiente.
+          Explore a lista completa de usuários cadastrados, visualizando informações detalhadas.
           </p>
         </div>
 

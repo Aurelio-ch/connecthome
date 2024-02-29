@@ -34,7 +34,7 @@ export function Condominium() {
           <h1 className="inline-block text-xl font-medium">
             Lista de Concominios
           </h1>
-          <p className="mt-1 text-sm text-gray-500">
+          <p className="mt-1 text-sm text-muted-foreground">
           Explore a lista de condomínios disponíveis e encontre informações essenciais para uma gestão eficiente.
           </p>
         </div>
