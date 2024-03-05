@@ -46,8 +46,8 @@ export function Condominium() {
         </Button>
       </div>
 
-      <div className="space-y-4">
-        <Table className="border-y">
+      <div className="space-y-4 border rounded-lg shadow-sm">
+        <Table >
           <TableHeader>
             <TableRow>
               <TableHead className="w-[100px]"></TableHead>
@@ -58,9 +58,9 @@ export function Condominium() {
             </TableRow>
           </TableHeader>
           <TableBody>
-            {Array.from({ length: 10 }).map(() => {
+            {Array.from({ length: 10 }).map((_, i) => {
               return (
-                <TableRow>
+                <TableRow key={i}>
                   <TableCell className="font-medium"></TableCell>
                   <TableCell className="font-medium">Cod1</TableCell>
                   <TableCell>Condominio Solemar</TableCell>
@@ -72,7 +72,7 @@ export function Condominium() {
                           <MoreVertical className="size-4" />
                         </Button>
                       </DropdownMenuTrigger>
-                      <DropdownMenuContent>
+                      <DropdownMenuContent align="end">
                         <DropdownMenuLabel className="inline-flex items-center gap-2">
                           <Settings className="size-4" /> Gerenciar
                         </DropdownMenuLabel>

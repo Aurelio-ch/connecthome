@@ -1,8 +1,8 @@
 import { Button } from "@/components/ui/button";
-import { Pagination, PaginationContent, PaginationItem, PaginationPrevious, PaginationLink, PaginationEllipsis, PaginationNext } from "@/components/ui/pagination";
-import { TableHeader, TableRow, TableHead, TableBody, TableCell, Table } from "@/components/ui/table";
-import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuItem } from "@/components/ui/dropdown-menu";
-import { Plus, MoreVertical, Settings } from "lucide-react";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
+import { Pagination, PaginationContent, PaginationEllipsis, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious } from "@/components/ui/pagination";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+import { MoreVertical, Plus, Settings } from "lucide-react";
 
 export function Users() {
     return (
@@ -24,8 +24,8 @@ export function Users() {
         </Button>
       </div>
 
-      <div className="space-y-4">
-        <Table className="border-y">
+      <div className="space-y-4 border rounded-lg shadow-sm">
+        <Table >
           <TableHeader>
             <TableRow>
               <TableHead className="w-[100px]"></TableHead>
@@ -35,9 +35,9 @@ export function Users() {
             </TableRow>
           </TableHeader>
           <TableBody>
-            {Array.from({ length: 10 }).map(() => {
+            {Array.from({ length: 10 }).map((_, i) => {
               return (
-                <TableRow>
+                <TableRow key={i}>
                   <TableCell className="font-medium"></TableCell>
                   <TableCell>
                     Aurélio Chagas
@@ -51,7 +51,7 @@ export function Users() {
                           <MoreVertical className="size-4" />
                         </Button>
                       </DropdownMenuTrigger>
-                      <DropdownMenuContent>
+                      <DropdownMenuContent align="end">
                         <DropdownMenuLabel className="inline-flex items-center gap-2">
                           <Settings className="size-4" /> Gerenciar
                         </DropdownMenuLabel>

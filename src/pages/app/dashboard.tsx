@@ -69,12 +69,15 @@ export function Dashboard() {
 
         <Card>
           <CardHeader className="flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-base font-semibold">Usuários</CardTitle><b></b>
+            <CardTitle className="text-base font-semibold">Usuários</CardTitle>
+            <b></b>
             <UserRoundCog className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <span className="text-2xl font-bold tracking-tight">10</span>
-            <p className="text-xs text-muted-foreground">número de usuários do sistema</p>
+            <p className="text-xs text-muted-foreground">
+              número de usuários do sistema
+            </p>
           </CardContent>
         </Card>
       </div>
@@ -90,56 +93,59 @@ export function Dashboard() {
           </p>
         </div>
 
-        <Button variant="link" className="inline-flex justify-end gap-1 text-muted-foreground transition hover:opacity-65" asChild>
-          <Link
-            
-            to="/condominium"
-          >
+        <Button
+          variant="link"
+          className="inline-flex justify-end gap-1 text-muted-foreground transition hover:opacity-65"
+          asChild
+        >
+          <Link to="/condominium">
             Ver mais <ArrowRight className="size-4" />
           </Link>
         </Button>
       </div>
 
-      <Table className="overflow-auto">
-        <TableHeader>
-          <TableRow>
-            <TableHead className="w-[100px]">ID</TableHead>
-            <TableHead>Nome do Condominio</TableHead>
-            <TableHead>Nº de Moradores</TableHead>
-            <TableHead className="text-right" />
-          </TableRow>
-        </TableHeader>
-        <TableBody>
-          {Array.from({ length: 3 }).map(() => {
-            return (
-              <TableRow>
-                <TableCell className="font-medium">Cod1</TableCell>
-                <TableCell>Condominio Solemar</TableCell>
-                <TableCell>200</TableCell>
-                <TableCell className="text-right">
-                  <DropdownMenu>
-                    <DropdownMenuTrigger asChild>
-                      <Button variant="ghost" size="icon">
-                        <MoreVertical className="size-4" />
-                      </Button>
-                    </DropdownMenuTrigger>
-                    <DropdownMenuContent>
-                      <DropdownMenuLabel className="inline-flex items-center gap-2">
-                        {" "}
-                        <Settings className="size-4" /> Gerenciar
-                      </DropdownMenuLabel>
-                      <DropdownMenuSeparator />
-                      <DropdownMenuItem>Editar</DropdownMenuItem>
-                      <DropdownMenuItem>Moradores</DropdownMenuItem>
-                      <DropdownMenuItem>Add visitante</DropdownMenuItem>
-                    </DropdownMenuContent>
-                  </DropdownMenu>
-                </TableCell>
-              </TableRow>
-            );
-          })}
-        </TableBody>
-      </Table>
+      <div className="space-y-4 rounded-lg border shadow-sm">
+        <Table>
+          <TableHeader>
+            <TableRow>
+              <TableHead className="w-[100px]">ID</TableHead>
+              <TableHead>Nome do Condominio</TableHead>
+              <TableHead>Nº de Moradores</TableHead>
+              <TableHead className="text-right" />
+            </TableRow>
+          </TableHeader>
+          <TableBody>
+            {Array.from({ length: 3 }).map((_, i) => {
+              return (
+                <TableRow key={i}>
+                  <TableCell className="font-medium">Cod1</TableCell>
+                  <TableCell>Condominio Solemar</TableCell>
+                  <TableCell>200</TableCell>
+                  <TableCell className="text-right">
+                    <DropdownMenu>
+                      <DropdownMenuTrigger asChild>
+                        <Button variant="ghost" size="icon">
+                          <MoreVertical className="size-4" />
+                        </Button>
+                      </DropdownMenuTrigger>
+                      <DropdownMenuContent align="end">
+                        <DropdownMenuLabel className="inline-flex items-center gap-2">
+                          {" "}
+                          <Settings className="size-4" /> Gerenciar
+                        </DropdownMenuLabel>
+                        <DropdownMenuSeparator />
+                        <DropdownMenuItem>Editar</DropdownMenuItem>
+                        <DropdownMenuItem>Moradores</DropdownMenuItem>
+                        <DropdownMenuItem>Add visitante</DropdownMenuItem>
+                      </DropdownMenuContent>
+                    </DropdownMenu>
+                  </TableCell>
+                </TableRow>
+              );
+            })}
+          </TableBody>
+        </Table>
+      </div>
     </>
   );
 }

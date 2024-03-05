@@ -1,7 +1,6 @@
-import { Building2, Menu, Settings } from "lucide-react";
+import { Building2, LogOut, Menu, Settings, User } from "lucide-react";
 import { ModeToggle } from "./mode-toggle";
 import { Button } from "./ui/button";
-import { NavLink } from "./ui/nav-link";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -10,6 +9,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "./ui/dropdown-menu";
+import { NavLink } from "./ui/nav-link";
 
 export function Header() {
   return (
@@ -41,7 +41,7 @@ export function Header() {
                 <Settings className="size-5" />
               </Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent>
+            <DropdownMenuContent align="end">
               <DropdownMenuLabel className="inline-flex flex-col">
                 Aurélio Chagas
                 <p className="text-xs text-stone-400">
@@ -49,10 +49,10 @@ export function Header() {
                 </p>
               </DropdownMenuLabel>
               <DropdownMenuSeparator />
-              <DropdownMenuItem>Perfil</DropdownMenuItem>
-              <DropdownMenuItem>Configurações</DropdownMenuItem>
+              <DropdownMenuItem> <User className="size-4 mr-2" /> Perfil</DropdownMenuItem>
+              <DropdownMenuItem> <Settings className="size-4  mr-2" /> Configurações</DropdownMenuItem>
               <DropdownMenuSeparator />
-              <DropdownMenuItem>Log out</DropdownMenuItem>
+              <DropdownMenuItem className="text-rose-500 dark:text-rose-400"> <LogOut className="size-4 mr-2" /> Sair</DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
           <ModeToggle />
