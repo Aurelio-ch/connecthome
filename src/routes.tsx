@@ -2,11 +2,11 @@ import { createBrowserRouter } from 'react-router-dom'
 
 import { AppLayout } from './pages/_layouts/app'
 import { AuthLayout } from './pages/_layouts/auth'
-import { Dashboard } from './pages/app/dashboard'
 import { SignIn } from './pages/auth/sign-in'
 import { ResetPassword } from './pages/auth/reset-password'
-import { Condominium } from './pages/app/condominium'
-import { Users } from './pages/app/users'
+import { DashboardManager } from './pages/app/dashboard-manager/dashboard/dashboard'
+import { Condominium } from './pages/app/dashboard-manager/condominium/condominium'
+import { Users } from './pages/app/dashboard-manager/users/users'
 
 
 export const router = createBrowserRouter([
@@ -16,7 +16,7 @@ export const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <Dashboard />,
+        element: <DashboardManager />,
       },
       {
         path: '/condominium',

@@ -27,7 +27,7 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 
-export function Dashboard() {
+export function DashboardAdmin() {
   return (
     <>
       <div>
