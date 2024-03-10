@@ -26,15 +26,29 @@ export default function CreateCondominiumDialog() {
             <Label className="text-sm">Nome condomínios:</Label>
             <Input id="name" />
           </div>
+          <div className="flex flex-col gap-2">
+            <Label className="text-sm">Endereço:</Label>
+            <Input id="name" />
+          </div>
+          <div className="flex gap-2">
+            <div className="flex w-full flex-col gap-2">
+              <Label className="text-sm">Nº de Blocos:</Label>
+              <Input id="name" />
+            </div>
+            <div className="flex w-full flex-col gap-2">
+              <Label className="text-sm">Nº de apartamento:</Label>
+              <Input id="name" />
+            </div>
+          </div>
         </div>
 
-        <DialogFooter className="mt-6">
+        <DialogFooter className="mt-6 flex gap-2 md:gap-0">
           <DialogClose asChild>
             <Button variant="outline" type="button">
               Cancelar
             </Button>
           </DialogClose>
-          <Button type="submit" variant="success">
+          <Button type="submit"variant="success">
             Salvar
           </Button>
         </DialogFooter>

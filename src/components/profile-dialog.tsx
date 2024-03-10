@@ -49,7 +49,7 @@ export default function ProfileDialog() {
           </div>
         </div>
 
-        <DialogFooter className="mt-6">
+        <DialogFooter className="mt-6 flex gap-2 md:gap-0">
           <DialogClose asChild>
             <Button variant="outline" type="button">
               Cancelar

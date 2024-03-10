@@ -7,6 +7,7 @@ import { ResetPassword } from './pages/auth/reset-password'
 import { DashboardManager } from './pages/app/dashboard-manager/dashboard/dashboard'
 import { Condominium } from './pages/app/dashboard-manager/condominium/condominium'
 import { Users } from './pages/app/dashboard-manager/users/users'
+import { InfoCondominium } from './pages/app/dashboard-manager/condominium/info-condominium'
 
 
 export const router = createBrowserRouter([
@@ -25,6 +26,10 @@ export const router = createBrowserRouter([
       {
         path: '/users',
         element: <Users />,
+      },
+      {
+        path: '/condominium/:condominiumId',
+        element: <InfoCondominium />,
       },
       
     ],
