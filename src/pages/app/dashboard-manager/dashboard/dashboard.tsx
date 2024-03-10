@@ -25,11 +25,13 @@ import {
   UserRoundCog,
   Users,
 } from "lucide-react";
+import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 
 export function DashboardManager() {
   return (
     <>
+      <Helmet title="Dashboard" />
       <div>
         <h1 className="inline-block text-xl font-medium">Dashboard</h1>
         <p className="mt-1 text-sm text-muted-foreground">
@@ -134,9 +136,13 @@ export function DashboardManager() {
                           <Settings className="size-4" /> Gerenciar
                         </DropdownMenuLabel>
                         <DropdownMenuSeparator />
-                        <DropdownMenuItem>Editar</DropdownMenuItem>
-                        <DropdownMenuItem>Moradores</DropdownMenuItem>
-                        <DropdownMenuItem>Add visitante</DropdownMenuItem>
+                        <DropdownMenuItem className="cursor-pointer">Editar</DropdownMenuItem>
+                        <DropdownMenuItem className="cursor-pointer" asChild>
+                          <Link to="/condominium/moradores">
+                            Moradores
+                          </Link>
+                        </DropdownMenuItem>
+                        <DropdownMenuItem className="cursor-pointer">Add visitante</DropdownMenuItem>
                       </DropdownMenuContent>
                     </DropdownMenu>
                   </TableCell>
