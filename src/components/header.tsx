@@ -1,15 +1,8 @@
-import { Building2, LogOut, Menu, Settings, User } from "lucide-react";
+import { Building2, Menu } from "lucide-react";
 import { ModeToggle } from "./mode-toggle";
 import { Button } from "./ui/button";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "./ui/dropdown-menu";
 import { NavLink } from "./ui/nav-link";
+import AccountMenu from "./account-menu";
 
 export function Header() {
   return (
@@ -28,33 +21,14 @@ export function Header() {
           </span>
 
           <nav className=" hidden gap-4 pl-4 md:inline-flex">
-            <NavLink to="/">Dashboard</NavLink>
-            <NavLink to="/condominium">Condominios</NavLink>
-            <NavLink to="/users">Usuarios</NavLink>
+            <NavLink to="/">Painel</NavLink>
+            <NavLink to="/condominium">Condomínios</NavLink>
+            <NavLink to="/users">Usuários</NavLink>
           </nav>
         </div>
 
         <div className="inline-flex items-center gap-4">
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button variant="ghost" size="icon">
-                <Settings className="size-5" />
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="end">
-              <DropdownMenuLabel className="inline-flex flex-col">
-                Aurélio Chagas
-                <p className="text-xs text-stone-400">
-                  aurelio.chagas.c@gmail.com
-                </p>
-              </DropdownMenuLabel>
-              <DropdownMenuSeparator />
-              <DropdownMenuItem> <User className="size-4 mr-2" /> Perfil</DropdownMenuItem>
-              <DropdownMenuItem> <Settings className="size-4  mr-2" /> Configurações</DropdownMenuItem>
-              <DropdownMenuSeparator />
-              <DropdownMenuItem className="text-rose-500 dark:text-rose-400"> <LogOut className="size-4 mr-2" /> Sair</DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
+          <AccountMenu />
           <ModeToggle />
         </div>
       </div>

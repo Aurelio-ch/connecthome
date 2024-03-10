@@ -1,4 +1,6 @@
+import CreateCondominiumDialog from "@/components/create-condominium-dialog";
 import { Button } from "@/components/ui/button";
+import { Dialog, DialogTrigger } from "@/components/ui/dialog";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -10,11 +12,11 @@ import {
 import {
   Pagination,
   PaginationContent,
-  PaginationItem,
-  PaginationPrevious,
-  PaginationLink,
   PaginationEllipsis,
+  PaginationItem,
+  PaginationLink,
   PaginationNext,
+  PaginationPrevious,
 } from "@/components/ui/pagination";
 import {
   Table,
@@ -25,10 +27,13 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { MoreVertical, Plus, Settings } from "lucide-react";
+import { Helmet } from 'react-helmet-async';
 
 export function Condominium() {
   return (
     <>
+      <Helmet title="Condomínios" />
+      <Dialog>
       <div className="flex  items-center flex-row gap-4 justify-between">
         <div >
           <h1 className="inline-block text-xl font-medium">
@@ -39,11 +44,13 @@ export function Condominium() {
           </p>
         </div>
 
+        <DialogTrigger asChild>
         <Button className="inline-flex gap-2 hover:opacity-65 transition ">
           <Plus className="size-4" /> 
           <span className="hidden md:block">Add Condominio</span>
           <span className="block md:hidden">Add</span>
         </Button>
+        </DialogTrigger>
       </div>
 
       <div className="border rounded-lg shadow-sm">
@@ -106,6 +113,9 @@ export function Condominium() {
           </PaginationContent>
         </Pagination>
       </div>
+
+      <CreateCondominiumDialog />
+      </Dialog>
     </>
   );
 }
