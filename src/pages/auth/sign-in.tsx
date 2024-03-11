@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 export function SignIn() {
   return (
     <>
-     
+  
       <div className="space-y-2">
         <h1 className="text-3xl font-bold text-center">Login</h1>
         <p className="text-sm text-muted-foreground text-center">Faça login de maneira rápida e segura para acessar todas as funcionalidades do sistema.</p>
