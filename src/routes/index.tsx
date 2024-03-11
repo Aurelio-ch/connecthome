@@ -1,13 +1,13 @@
-import { createBrowserRouter } from 'react-router-dom'
 
-import { AppLayout } from './pages/_layouts/app'
-import { AuthLayout } from './pages/_layouts/auth'
-import { SignIn } from './pages/auth/sign-in'
-import { ResetPassword } from './pages/auth/reset-password'
-import { DashboardManager } from './pages/app/dashboard-manager/dashboard/dashboard'
-import { Condominium } from './pages/app/dashboard-manager/condominium/condominium'
-import { Users } from './pages/app/dashboard-manager/users/users'
-import { InfoCondominium } from './pages/app/dashboard-manager/condominium/info-condominium'
+import { AppLayout } from '@/pages/_layouts/app'
+import { AuthLayout } from '@/pages/_layouts/auth'
+import { Condominium } from '@/pages/app/manager/condominium'
+import { InfoCondominium } from '@/pages/app/manager/condominium/info-condominium'
+import { DashboardManager } from '@/pages/app/manager/dashboard'
+import { Users } from '@/pages/app/manager/users'
+import { ResetPassword } from '@/pages/auth/reset-password'
+import { SignIn } from '@/pages/auth/sign-in'
+import { createBrowserRouter } from 'react-router-dom'
 
 
 export const router = createBrowserRouter([
