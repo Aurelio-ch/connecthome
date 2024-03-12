@@ -11,7 +11,7 @@ export function manegerRoutes() {
     children: [
       {
         path: "*",
-        element: <Navigate to="/sign-in" />,
+        element: <Navigate to="/" />,
       },
       {
         path: "/",

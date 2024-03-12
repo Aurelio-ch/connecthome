@@ -15,11 +15,13 @@ export const router = createBrowserRouter([
     children: [
       user === null
         ? publicRoutes()
-        : user.role === "menager"
+        : user.role === "manager"
           ? manegerRoutes()
           : user.role === "Admin"
             ? adminRoutes()
-            : usersRoutes(),
+            : user.role === "user" || user.role === "port"
+              ? usersRoutes()
+              : publicRoutes(),
     ],
   },
 ]);

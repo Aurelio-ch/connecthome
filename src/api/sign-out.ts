@@ -1,3 +1,5 @@
+import Cookies from "js-cookie";
+
 export async function signOut() {
-  console.log('Signing out')
+  Cookies.remove('admin')
 }

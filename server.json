@@ -1,0 +1,17 @@
+{
+    "user" : [
+        {
+            "id": 1,
+            "name": "Aurelio Chagas Campos",
+            "role": "Admin",
+            "email": "aurelio.chagas.c@gmail.com.br"
+        }
+    ],
+    "condominium": [
+        {
+            "id": 1,
+            "name": "Condominio Solar"
+            
+        }
+    ]
+}

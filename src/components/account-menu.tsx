@@ -1,7 +1,6 @@
 import { signOut } from "@/api/sign-out";
 import { useMutation } from "@tanstack/react-query";
 import { LogOut, Settings, User } from "lucide-react";
-import { useNavigate } from "react-router-dom";
 import ProfileDialog from "./profile-dialog";
 import { Button } from "./ui/button";
 import { Dialog, DialogTrigger } from "./ui/dialog";
@@ -15,12 +14,11 @@ import {
 } from "./ui/dropdown-menu";
 
 export default function AccountMenu() {
-  const navigate = useNavigate();
 
   const { mutateAsync: signOutFn } = useMutation({
     mutationFn: signOut,
     onSuccess: () => {
-      navigate("/sign-in", { replace: true });
+      window.location.href = '/sign-in' 
     },
   });
 
@@ -56,7 +54,7 @@ export default function AccountMenu() {
           </DialogTrigger>
           <DropdownMenuSeparator />
           <DropdownMenuItem className="text-rose-500 dark:text-rose-400">
-            <button className="flex items-center" onClick={() => handleSignOut()}>
+            <button className="flex items-center w-full" onClick={() => handleSignOut()}>
               <LogOut className="mr-2 size-4" />
               <span>Sair</span>
             </button>
