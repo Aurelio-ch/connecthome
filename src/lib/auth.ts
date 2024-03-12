@@ -1,4 +1,4 @@
-import Cookies from "js-cookie"
+import Cookies from "js-cookie";
 import { jwtDecode } from "jwt-decode";
 
 export interface User {
@@ -9,11 +9,11 @@ export interface User {
     iat: number
   }
 
-export function getAuth(): User {
+export function getAuth(): User | null {
     const token = Cookies.get('admin')
 
 if (!token) {
-    throw new Error('Unauthenticated.')
+  return null
   }
   const user: User = jwtDecode(token)
   return user
