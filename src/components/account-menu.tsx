@@ -15,24 +15,21 @@ import {
 import { authChannel } from "@/context/auth-context";
 
 export default function AccountMenu() {
-
   const { mutateAsync: signOutFn } = useMutation({
     mutationFn: signOut,
     onSuccess: () => {
-      // window.location.href = '/sign-in' 
-      window.location.reload()
-      authChannel.postMessage('signOut')
+      // window.location.href = '/sign-in'
+      window.location.reload();
+      authChannel.postMessage("signOut");
     },
   });
 
   async function handleSignOut() {
     try {
-        // throw new Error()
-        await signOutFn()
-
-        
+      // throw new Error()
+      await signOutFn();
     } catch (error) {
-        console.log(error);
+      console.log(error);
     }
   }
 
@@ -52,12 +49,21 @@ export default function AccountMenu() {
           <DropdownMenuSeparator />
           <DialogTrigger asChild>
             <DropdownMenuItem>
-              <User className="mr-2 size-4" /> Perfil
+              <button
+                className="flex w-full items-center"
+                onClick={() => handleSignOut()}
+              >
+                <User className="mr-2 size-4" />
+                <span>Perfil</span>
+              </button>
             </DropdownMenuItem>
           </DialogTrigger>
           <DropdownMenuSeparator />
           <DropdownMenuItem className="text-rose-500 dark:text-rose-400">
-            <button className="flex items-center w-full" onClick={() => handleSignOut()}>
+            <button
+              className="flex w-full items-center"
+              onClick={() => handleSignOut()}
+            >
               <LogOut className="mr-2 size-4" />
               <span>Sair</span>
             </button>
