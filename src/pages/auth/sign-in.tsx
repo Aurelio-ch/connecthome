@@ -1,6 +1,7 @@
 import { signIn } from "@/api/sign-in";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { authChannel } from "@/context/auth-context";
 import { useMutation } from "@tanstack/react-query";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
@@ -17,6 +18,7 @@ export function SignIn() {
     onSuccess: () => {
       // window.location.href = '/'
       window.location.reload()
+      authChannel.postMessage('signIn')
     },
   });
 

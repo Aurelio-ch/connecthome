@@ -12,6 +12,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "./ui/dropdown-menu";
+import { authChannel } from "@/context/auth-context";
 
 export default function AccountMenu() {
 
@@ -20,6 +21,7 @@ export default function AccountMenu() {
     onSuccess: () => {
       // window.location.href = '/sign-in' 
       window.location.reload()
+      authChannel.postMessage('signOut')
     },
   });
 
