@@ -26,8 +26,9 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { MoreVertical, Plus, Settings } from "lucide-react";
+import { MoreVertical, Plus, Search, Settings } from "lucide-react";
 import { Helmet } from 'react-helmet-async';
+import { Link } from "react-router-dom";
 
 export function Condominium() {
   return (
@@ -68,7 +69,13 @@ export function Condominium() {
             {Array.from({ length: 10 }).map((_, i) => {
               return (
                 <TableRow key={i}>
-                  <TableCell className="font-medium"></TableCell>
+                  <TableCell className="font-medium">
+                    <Button asChild variant="outline" size="icon">
+                      <Link to={`/condominium/${i}`} >
+                        <Search className="size-4" />
+                      </Link>
+                    </Button>
+                  </TableCell>
                   <TableCell className="font-medium">Cod1</TableCell>
                   <TableCell>Condominio Solemar</TableCell>
                   <TableCell>200</TableCell>
