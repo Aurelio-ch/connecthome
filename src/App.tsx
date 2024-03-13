@@ -4,18 +4,20 @@ import { ThemeProvider } from "./components/theme-provider";
 import "./global.css";
 import { queryClient } from "./lib/react-query";
 
-import { RouterProvider } from "react-router-dom";
-import { router } from "./routes";
+import { AuthProvider } from "./context/auth-context";
+import { RouterApp } from "./routes";
 
 export function App() {
   return (
     <HelmetProvider>
-      <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
-        <Helmet titleTemplate="%s | ConnectHome" />
-        <QueryClientProvider client={queryClient}>
-          <RouterProvider router={router} />
-        </QueryClientProvider>
-      </ThemeProvider>
+      <AuthProvider>
+        <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+          <Helmet titleTemplate="%s | ConnectHome" />
+          <QueryClientProvider client={queryClient}>
+            <RouterApp />
+          </QueryClientProvider>
+        </ThemeProvider>
+      </AuthProvider>
     </HelmetProvider>
   );
 }

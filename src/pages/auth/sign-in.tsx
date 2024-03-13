@@ -15,7 +15,8 @@ export function SignIn() {
   const { mutateAsync: signInFn } = useMutation({
     mutationFn: signIn,
     onSuccess: () => {
-      window.location.href = '/'
+      // window.location.href = '/'
+      window.location.reload()
     },
   });
 

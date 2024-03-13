@@ -18,7 +18,8 @@ export default function AccountMenu() {
   const { mutateAsync: signOutFn } = useMutation({
     mutationFn: signOut,
     onSuccess: () => {
-      window.location.href = '/sign-in' 
+      // window.location.href = '/sign-in' 
+      window.location.reload()
     },
   });
 
